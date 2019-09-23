@@ -4,10 +4,10 @@
 Hello, Welcome <strong>{{ auth.user.username }}</strong>!
 <br />
 
-<h3>{{ title }}</h3>
+<h1>{{ title }}</h1>
 
 <div class="table__wrapper">
-<table class="table is-bordered pricing__table is-fullwidth">
+<table class="table is-bordered pricing__table is-fullwidth is-hoverable">
   <thead>
     <tr>
       <th>Nama</th>
@@ -20,12 +20,14 @@ Hello, Welcome <strong>{{ auth.user.username }}</strong>!
   </thead>
   <tbody>
     <tr>
-      <th>Active</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>      
+        @each(x in data)
+        <td>{{ x.asker_user_id }}</td>
+        <td>{{ x.tanggal }}</td>
+        <td>{{ x.judul }}</td>
+        <td>{{ x.jumlah_bantuan }}</td>
+        <td>{{ x.detail }}</td>
+        <td><a href="/login">Details</a></td>
+        @endeach
     </tr>
   </tbody>
 </table>

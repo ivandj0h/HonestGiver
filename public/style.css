@@ -83,3 +83,7 @@ section:before {
 .table__wrapper {
   overflow-x: auto;
 }
+
+h1 {
+  font-size: 2em
+}
