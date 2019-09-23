@@ -1,9 +1,34 @@
 @layout('layout.app')
 
 @section('content')
-  <p>
-    Welcome <strong>{{ title }}</strong>!
-  </p>
+Hello, Welcome <strong>{{ auth.user.username }}</strong>!
+<br />
 
+<h3>{{ title }}</h3>
+
+<div class="table__wrapper">
+<table class="table is-bordered pricing__table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Tanggal Permintaan</th>
+      <th>Judul Bantuan</th>
+      <th>Jumlah Bantuan (Rupiah)</th>
+      <th>Terpenuhi (Rupiah)</th>
+      <th>Berikan Bantuan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Active</th>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>      
+    </tr>
+  </tbody>
+</table>
+</div>
 
 @endsection

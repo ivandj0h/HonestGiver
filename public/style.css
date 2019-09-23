@@ -80,3 +80,6 @@ section:before {
     transform: none;
   }
 }
+.table__wrapper {
+  overflow-x: auto;
+}
