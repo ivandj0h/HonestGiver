@@ -6,12 +6,8 @@ class BantuanController {
     
     async home({ view }) {
 
-      // const cthData = [
-      //   {name: 'juna',age: 5},
-      //   {name: 'dave',age: 11}
-      // ]
-
     const bantuan = await Bantuan.all()
+    //const bantuan = await Bantuan.select('*').from('v_bantuans')
 
         return view.render('home', {
           title: 'BANTUAN DIBUTUHKAN',

@@ -21,7 +21,7 @@ Hello, Welcome <strong>{{ auth.user.username }}</strong>!
   <tbody>
     <tr>
         @each(x in data)
-        <td>{{ x.asker_user_id }}</td>
+        <td>{{ x.username }}</td>
         <td>{{ x.tanggal }}</td>
         <td>{{ x.judul }}</td>
         <td>{{ x.jumlah_bantuan }}</td>
