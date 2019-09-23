@@ -11,7 +11,7 @@ class BantuanController {
 
         return view.render('home', {
             title: 'BANTUAN DIBUTUHKAN',
-            data: bantuan.toJSON()
+            description: 'Social Honest is a social assistance platform created to bridge between those who need financial assistance and those who want to help and HonestGiver is part of Social Honest, a mini-application that acts as an aid provider.'
         })
     }
 
