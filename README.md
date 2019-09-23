@@ -12,6 +12,13 @@ in this application, i use several featured as :
 7. Lucid ORM
 8. Migrations and seeds
 
+## Getting Started
+To getting started you clone the repo
+
+```bash
+https://github.com/ivandi1980/HonestGiver.git
+```
+
 ## Usage
 in order to run this application the 1st step you have to Install dependencies directly by using
 
