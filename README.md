@@ -1,6 +1,6 @@
-# Adonis fullstack application
+# HonestGiver
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+Social Honest is a social assistance platform created to bridge between those who need financial assistance and those who want to help and HonestGiver is part of Social Honest, a mini-application that acts as an aid provider.
 
 1. Bodyparser
 2. Session
