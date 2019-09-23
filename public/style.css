@@ -1,92 +1,230 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
-
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  background-image: url("/splash.png");
-  background-color: #220052;
+  padding-top: 50px
 }
 
-* {
-  margin: 0;
-  padding: 0;
+body>.navbar {
+  -webkit-transition: background-color .3s ease-in;
+  transition: background-color .3s ease-in
 }
 
-section {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 536px;
-  margin: auto;
+@media (min-width:768px) {
+  body>.navbar-transparent {
+      background-color: transparent
+  }
+  body>.navbar-transparent .navbar-nav>.open>a {
+      background-color: transparent!important
+  }
+}
+
+#home {
+  padding-top: 0
+}
+
+#home .navbar-brand {
+  padding: 13.5px 15px 12.5px
+}
+
+#home .navbar-brand>img {
+  display: inline;
+  margin: 0 10px;
+  height: 100%
+}
+
+#banner {
+  min-height: 300px;
+  border-bottom: none
+}
+
+.table-of-contents {
+  margin-top: 1em
+}
+
+.page-header h1 {
+  font-size: 4em
+}
+
+.bs-docs-section {
+  margin-top: 6em
+}
+
+.bs-docs-section h1 {
+  padding-top: 100px
+}
+
+.bs-component {
+  position: relative
+}
+
+.bs-component .modal {
   position: relative;
+  top: auto;
+  right: auto;
+  left: auto;
+  bottom: auto;
+  z-index: 1;
+  display: block
 }
 
-section:before {
-  content: "";
+.bs-component .modal-dialog {
+  width: 90%
+}
+
+.bs-component .popover {
+  position: relative;
+  display: inline-block;
+  width: 220px;
+  margin: 20px
+}
+
+#source-button {
   position: absolute;
-  background: url("/pyramid.png") no-repeat;
-  background-size: 100%;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  font-weight: 700
+}
+
+.nav-tabs {
+  margin-bottom: 15px
+}
+
+.progress {
+  margin-bottom: 10px
+}
+
+footer {
+  margin: 5em 0
+}
+
+footer li {
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em
+}
+
+footer p {
+  clear: left;
+  margin-bottom: 0
+}
+
+.splash {
+  padding: 9em 0 2em;
+  background-color: #141d27;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center
+}
+
+.splash .logo {
+  width: 160px
+}
+
+.splash h1 {
+  font-size: 3em
+}
+
+.splash #social {
+  margin: 2em 0
+}
+
+.splash .alert {
+  margin: 2em 0
+}
+
+.section-tout {
+  padding: 4em 0 3em;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  background-color: #eaf1f1
+}
+
+.section-tout .fa {
+  margin-right: .5em
+}
+
+.section-tout p {
+  margin-bottom: 3em
+}
+
+.section-preview {
+  padding: 4em 0 4em
+}
+
+.section-preview .preview {
+  margin-bottom: 4em;
+  background-color: #eaf1f1
+}
+
+.section-preview .preview .image {
+  position: relative
+}
+
+.section-preview .preview .image:before {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 402px;
-  z-index: -1;
+  height: 100%;
+  content: "";
+  pointer-events: none
 }
 
-.logo {
-  background: url("/logo.svg") no-repeat;
-  width: 36px;
-  height: 33px;
-  background-size: 100%;
-  margin-bottom: 35px;
-  opacity: 0;
-  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+.section-preview .preview .options {
+  padding: 1em 2em 2em;
+  border: 1px solid rgba(0, 0, 0, .05);
+  border-top: none;
+  text-align: center
 }
 
-.title {
-  background: url("/title.svg") no-repeat;
-  width: 219px;
-  height: 36px;
-  background-size: 100%;
-  opacity: 0;
-  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.2s forwards;
+.section-preview .preview .options p {
+  margin-bottom: 2em
 }
 
-.subtitle {
-  margin-top: 25px;
-  color: #BDB3CB;
-  font-size: 17px;
-  text-align: center;
-  letter-spacing: 0.5;
-  opacity: 0;
-  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.5s forwards;
+.section-preview .dropdown-menu {
+  text-align: left
 }
 
-
-a {
-  color: inherit;
-  text-decoration: underline;
+.section-preview .lead {
+  margin-bottom: 2em
 }
 
-p {
-  margin: 0.83rem 0;
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(40px);
-    opacity: 0;
+@media (max-width:767px) {
+  .section-preview .image img {
+      width: 100%
   }
-  50% {
-    opacity: 0.2%;
+}
+
+.sponsor #carbonads {
+  max-width: 240px;
+  margin: 0 auto
+}
+
+.sponsor .carbon-text {
+  display: block;
+  margin-top: 1em;
+  font-size: 12px
+}
+
+.sponsor .carbon-poweredby {
+  float: right;
+  margin-top: 1em;
+  font-size: 10px
+}
+
+@media (max-width:767px) {
+  .splash {
+      padding-top: 4em
   }
-  100% {
-    opacity: 1;
-    transform: none;
+  .splash .logo {
+      width: 100px
+  }
+  .splash h1 {
+      font-size: 2em
+  }
+  #banner {
+      margin-bottom: 2em;
+      text-align: center
   }
 }
