@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2019 at 04:14 PM
+-- Generation Time: Sep 23, 2019 at 07:24 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -40,24 +40,13 @@ CREATE TABLE `adonis_schema` (
 --
 
 INSERT INTO `adonis_schema` (`id`, `name`, `batch`, `migration_time`) VALUES
-(1, '1503248427885_user', 1, '2019-09-23 13:33:24'),
-(2, '1503248427886_token', 1, '2019-09-23 13:33:26'),
-(3, '1517537180329_password_reset_schema', 1, '2019-09-23 13:33:26'),
-(4, '1569245779060_useraskers_schema', 2, '2019-09-23 14:00:06'),
-(5, '1569245813167_usergivers_schema', 2, '2019-09-23 14:00:06'),
-(6, '1569245859984_bantuangivers_schema', 2, '2019-09-23 14:00:06');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bantuangivers`
---
-
-CREATE TABLE `bantuangivers` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(1, '1503248427885_user', 1, '2019-09-23 17:13:43'),
+(2, '1503248427886_token', 1, '2019-09-23 17:13:45'),
+(3, '1517537180329_password_reset_schema', 1, '2019-09-23 17:13:45'),
+(4, '1569245779060_useraskers_schema', 2, '2019-09-23 17:16:19'),
+(5, '1569245813167_usergivers_schema', 2, '2019-09-23 17:16:20'),
+(6, '1569255310408_locales', 2, '2019-09-23 17:16:21'),
+(7, '1569256945868_bantuan_givers_schema', 2, '2019-09-23 17:16:23');
 
 -- --------------------------------------------------------
 
@@ -67,11 +56,43 @@ CREATE TABLE `bantuangivers` (
 
 CREATE TABLE `bantuans` (
   `id` int(10) UNSIGNED NOT NULL,
-  `asker_user_id` int(10) UNSIGNED DEFAULT NULL,
+  `useraskers_id` int(10) UNSIGNED DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `judul` varchar(225) DEFAULT NULL,
   `jumlah_bantuan` decimal(17,8) DEFAULT NULL,
   `detail` text DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bantuan_givers`
+--
+
+CREATE TABLE `bantuan_givers` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `bantuan_id` int(10) UNSIGNED DEFAULT NULL,
+  `giver_user_id` int(10) UNSIGNED DEFAULT NULL,
+  `tanggal_dibantu` date DEFAULT NULL,
+  `nilai_bantuan` decimal(17,8) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `locales`
+--
+
+CREATE TABLE `locales` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `locale` varchar(255) NOT NULL,
+  `group` varchar(255) NOT NULL,
+  `item` varchar(255) NOT NULL,
+  `text` longtext DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -130,6 +151,10 @@ CREATE TABLE `useraskers` (
 
 CREATE TABLE `usergivers` (
   `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(80) NOT NULL,
+  `email` varchar(254) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `is_active` tinyint(1) DEFAULT 0,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -156,7 +181,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `confirmation_token`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'ivandi', 'ivandi@gmail.com', '$2a$10$qqJRfcSkLiGGLylC6RLTse6WWccQEkiLg70YgNXZxtl7Zve1V23G2', 'u42569OoIqZWaHN3QJN6cfGt1Tfb7QeDue0OW3wt', 1, '2019-09-23 21:34:03', '2019-09-23 21:34:03');
+(1, 'admin', 'admin@admin.com', '$2a$10$zcLNq8Zkp6K9yJntekL4nOzggDFY64UYGYz24yV3qTXInBJ0F.eEC', 'Wu5dI1MxE8i8nBVvILuuTaWUSereDns0fNbsYpso', 1, '2019-09-24 01:23:19', '2019-09-24 01:23:19');
 
 --
 -- Indexes for dumped tables
@@ -169,17 +194,25 @@ ALTER TABLE `adonis_schema`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bantuangivers`
---
-ALTER TABLE `bantuangivers`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `bantuans`
 --
 ALTER TABLE `bantuans`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `asker_user_id` (`asker_user_id`);
+  ADD KEY `useraskers_id` (`useraskers_id`);
+
+--
+-- Indexes for table `bantuan_givers`
+--
+ALTER TABLE `bantuan_givers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `bantuan_givers_bantuan_id_foreign` (`bantuan_id`),
+  ADD KEY `bantuan_givers_giver_user_id_foreign` (`giver_user_id`);
+
+--
+-- Indexes for table `locales`
+--
+ALTER TABLE `locales`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `password_resets`
@@ -207,7 +240,9 @@ ALTER TABLE `useraskers`
 -- Indexes for table `usergivers`
 --
 ALTER TABLE `usergivers`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usergivers_name_unique` (`name`),
+  ADD UNIQUE KEY `usergivers_email_unique` (`email`);
 
 --
 -- Indexes for table `users`
@@ -225,18 +260,24 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `adonis_schema`
 --
 ALTER TABLE `adonis_schema`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `bantuangivers`
---
-ALTER TABLE `bantuangivers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `bantuans`
 --
 ALTER TABLE `bantuans`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `bantuan_givers`
+--
+ALTER TABLE `bantuan_givers`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `locales`
+--
+ALTER TABLE `locales`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -277,7 +318,14 @@ ALTER TABLE `users`
 -- Constraints for table `bantuans`
 --
 ALTER TABLE `bantuans`
-  ADD CONSTRAINT `bantuans_ibfk_1` FOREIGN KEY (`asker_user_id`) REFERENCES `useraskers` (`id`);
+  ADD CONSTRAINT `bantuans_ibfk_1` FOREIGN KEY (`useraskers_id`) REFERENCES `useraskers` (`id`);
+
+--
+-- Constraints for table `bantuan_givers`
+--
+ALTER TABLE `bantuan_givers`
+  ADD CONSTRAINT `bantuan_givers_bantuan_id_foreign` FOREIGN KEY (`bantuan_id`) REFERENCES `bantuans` (`id`),
+  ADD CONSTRAINT `bantuan_givers_giver_user_id_foreign` FOREIGN KEY (`giver_user_id`) REFERENCES `usergivers` (`id`);
 
 --
 -- Constraints for table `tokens`
