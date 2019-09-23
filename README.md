@@ -64,3 +64,10 @@ nodemon server.js
 3. if you import honestgiver.sql to the database, use email : admin@admin.com, password admin to login
 4. if you face an error smtp:25 when register or login at the 1st time, please refresh or click back button on the browser then login with your email & password that you filled when you register
 5. if still face any error like the data not show up, please use import Database setup without Migration
+
+## ScreenShoot
+![Formregister](public/register.png "This is the login register")
+
+![Form login](public/login.png "This is the login login")
+
+![Dashboard](public/dashboard.png "This is the dashboard")
