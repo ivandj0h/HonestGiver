@@ -30,3 +30,9 @@ then Run the following command to run startup migrations
 ```bash
 adonis migration:run
 ```
+## Run Server (nodemon suggested)
+to run this application just run :
+
+```bash
+nodemon server.js
+```
