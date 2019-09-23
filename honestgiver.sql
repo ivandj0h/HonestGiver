@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2019 at 07:24 PM
+-- Generation Time: Sep 23, 2019 at 07:46 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -65,6 +65,13 @@ CREATE TABLE `bantuans` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `bantuans`
+--
+
+INSERT INTO `bantuans` (`id`, `useraskers_id`, `tanggal`, `judul`, `jumlah_bantuan`, `detail`, `created_at`, `updated_at`) VALUES
+(1, 1, '2019-09-24', 'Pengobatan anak sakit', '6500000.00000000', 'Pengobatan anak sakit', '2019-09-24 01:23:19', '2019-09-24 01:23:19');
+
 -- --------------------------------------------------------
 
 --
@@ -80,6 +87,13 @@ CREATE TABLE `bantuan_givers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bantuan_givers`
+--
+
+INSERT INTO `bantuan_givers` (`id`, `bantuan_id`, `giver_user_id`, `tanggal_dibantu`, `nilai_bantuan`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2019-09-24', '500000.00000000', '2019-09-24 01:23:19', '2019-09-24 01:23:19');
 
 -- --------------------------------------------------------
 
@@ -143,6 +157,13 @@ CREATE TABLE `useraskers` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `useraskers`
+--
+
+INSERT INTO `useraskers` (`id`, `name`, `email`, `password`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'Anton', 'anton@honestmining.com', '$2a$10$zcLNq8Zkp6K9yJntekL4nOzggDFY64UYGYz24yV3qTXInBJ0F.eEC', 1, '2019-09-24 01:23:19', '2019-09-24 01:23:19');
+
 -- --------------------------------------------------------
 
 --
@@ -158,6 +179,13 @@ CREATE TABLE `usergivers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usergivers`
+--
+
+INSERT INTO `usergivers` (`id`, `name`, `email`, `password`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'Lina', 'l@honestmining.com', '$2a$10$zcLNq8Zkp6K9yJntekL4nOzggDFY64UYGYz24yV3qTXInBJ0F.eEC', 1, '2019-09-24 01:23:19', '2019-09-24 01:23:19');
 
 -- --------------------------------------------------------
 
@@ -266,13 +294,13 @@ ALTER TABLE `adonis_schema`
 -- AUTO_INCREMENT for table `bantuans`
 --
 ALTER TABLE `bantuans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `bantuan_givers`
 --
 ALTER TABLE `bantuan_givers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `locales`
@@ -296,13 +324,13 @@ ALTER TABLE `tokens`
 -- AUTO_INCREMENT for table `useraskers`
 --
 ALTER TABLE `useraskers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `usergivers`
 --
 ALTER TABLE `usergivers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
