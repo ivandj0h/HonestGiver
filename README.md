@@ -36,3 +36,7 @@ to run this application just run :
 ```bash
 nodemon server.js
 ```
+
+## Important, before login
+1. After migration the databases successed, you have to register yourself as a User before login.
+2. if you can not login, you can open your database, find user table and change is_active from 0 to 1
