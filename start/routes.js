@@ -15,7 +15,7 @@
 
 const Route = use('Route')
 
-Route.on('/', 'BantuanController.index').render('home').as('home').middleware(['auth'])
+Route.get('/', 'BantuanController.home').as('home').middleware(['auth'])
 
 Route.get('register', 'Auth/RegisterController.showRegisterForm').middleware([
   'authenticated'

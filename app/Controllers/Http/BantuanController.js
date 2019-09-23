@@ -1,9 +1,10 @@
 'use strict'
 
 class BantuanController {
-    async index({ view }) {
+    
+    async home({ view }) {
         return view.render('home', {
-          title: 'Latest Posts'
+          title: 'Testing'
         })
       }
 }
