@@ -40,3 +40,4 @@ nodemon server.js
 ## Important, before login
 1. After migration the databases successed, you have to register yourself as a User before login.
 2. if you can not login, you can open your database, find user table and change is_active from 0 to 1
+3. to display the all data tables on dashboard, you can manually insert data into bantuan_givers table, bantuan table and user_askers table
