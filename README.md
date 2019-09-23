@@ -62,6 +62,5 @@ nodemon server.js
 1. After migration the databases successed, you have to register yourself as a User before login.
 2. if you can not login, you can open your database, find user table and change is_active from 0 to 1
 3. if you import honestgiver.sql to the database, use email : admin@admin.com, password admin to login
-4. if you face an error smtp:25 when register, please refresh or click back button on the browser then login with your email & password that you filled when you register
-5. to display the all data tables on dashboard, you can manually insert data into bantuan_givers table, bantuan table and user_askers table
-6. if still face any error like the data not show up, please use import Database setup without Migration
+4. if you face an error smtp:25 when register or login at the 1st time, please refresh or click back button on the browser then login with your email & password that you filled when you register
+5. if still face any error like the data not show up, please use import Database setup without Migration
