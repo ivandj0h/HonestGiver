@@ -7,7 +7,7 @@ class BantuanSchema extends Schema {
   up () {
     this.create('bantuans', (table) => {
       table.increments()
-      table.integer('asker_user_id')
+      table.integer('asker_user_id').unsigned().index('asker_user_id')
       table.date('tanggal')
       table.string('judul', 254)
       table.float('jumlah_bantuan',17,8)
