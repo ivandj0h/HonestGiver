@@ -20,7 +20,8 @@ const providers = [
   '@adonisjs/session/providers/SessionProvider',
   '@adonisjs/auth/providers/AuthProvider',
   '@adonisjs/mail/providers/MailProvider',
-  '@adonisjs/validator/providers/ValidatorProvider'
+  '@adonisjs/validator/providers/ValidatorProvider',
+  '@adonisjs/antl/providers/AntlProvider'
 ]
 
 /*
@@ -58,4 +59,13 @@ const aliases = {}
 */
 const commands = []
 
-module.exports = { providers, aceProviders, aliases, commands }
+module.exports = { 
+    providers, 
+    aceProviders, 
+    aliases, 
+    commands,
+      locales: {
+        loader: 'file',
+        locale: 'en'
+      }
+  }

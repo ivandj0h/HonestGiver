@@ -12,8 +12,13 @@ class BantuanController {
         const bantuan = await Bantuan
             .query()
             .with('userasker')
-            .select('id','tanggal', 'judul')
+            .select('id', 'tanggal', 'jumlah_bantuan', 'judul')
             .fetch()
+
+        // const bantuan = await Database.from('bantuans').whereExists(function () {
+        //   this.from('useraskers').where('bantuans.id', 'useraskers.asker_user_id')
+        // })
+        // const bantuan = await Database.table('useraskers').innerJoin('bantuans', 'useraskers.id', 'bantuans.asker_user_id').fetch()
 
             return view.render('home', {
               title: 'BANTUAN DIBUTUHKAN',

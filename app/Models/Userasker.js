@@ -5,7 +5,7 @@ const Model = use('Model')
 
 class Userasker extends Model {
     bantuan() {
-        return this.hasOne('App/Models/Bantuan')
+        return this.hasMany('App/Models/Bantuan')
     }
 }
 
