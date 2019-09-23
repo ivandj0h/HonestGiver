@@ -23,15 +23,25 @@ npm install
 to connect to the database (now i use RDBMS MySQL), the 1st step is 
 
 ```bash
-Edit your .env file to include the correct DB credentials
+find and Edit the .env file with the correct of your DB credentials
 ```
+please make sure you just create new database only and do not create table because it would be automate
+generate when you run migration.
+
 then Run the following command to run startup migrations
 
 ```bash
 adonis migration:run
 ```
 ## Run Server (nodemon suggested)
-to run this application just run :
+before you run this apps, please make sure you already have nodemon installed on your machine.
+but if you don't have nodemon installed on your machine, please install it
+
+```bash
+npm install -g nodemon
+```
+
+and after that, to run this application just run :
 
 ```bash
 nodemon server.js
