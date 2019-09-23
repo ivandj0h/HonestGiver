@@ -1,10 +1,11 @@
 'use strict'
 
 class BantuanController {
-    async index() {
-        return 'Bantuans'
-    }
-
+    async index({ view }) {
+        return view.render('home', {
+          title: 'Latest Posts'
+        })
+      }
 }
 
 module.exports = BantuanController
