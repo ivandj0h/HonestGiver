@@ -48,8 +48,10 @@ nodemon server.js
 2. if you import honestgiver.sql to the database, use email : admin@admin.com, password admin to login
 
 ## ScreenShoot
-![Formregister](public/register.png "This is the login register")
+![Dashboard](docs/index.png "This is the dashboard")
 
-![Form login](public/login.png "This is the login login")
+![Formregister](docs/form_register.png "This is the login register")
 
-![Dashboard](public/dashboard.png "This is the dashboard")
+![Form login](docs/form_login.png "This is the login login")
+
+![Bantuan](docs/bantuan.png "This is the Bantuan")
