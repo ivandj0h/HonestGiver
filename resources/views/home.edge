@@ -33,4 +33,9 @@ Hello, Welcome <strong>{{ auth.user.username }}</strong>!
 </table>
 </div>
 
+
+@each(ua in userasker)
+{{ ua.username }}
+@endeach
+
 @endsection

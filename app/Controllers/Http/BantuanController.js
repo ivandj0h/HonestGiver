@@ -3,17 +3,16 @@
 const Bantuan = use('App/Models/Bantuan')
 
 class BantuanController {
-    
+
     async home({ view }) {
 
-    const bantuan = await Bantuan.all()
-    
+        const bantuan = await Bantuan.all()
 
-        return view.render('home', {
-          title: 'BANTUAN DIBUTUHKAN',
-          data: bantuan.toJSON()
-        })
-      }
+            return view.render('home', {
+              title: 'BANTUAN DIBUTUHKAN',
+              data: bantuan.toJSON()
+            })
+    }
 }
 
 module.exports = BantuanController
