@@ -26,7 +26,7 @@ Hello, Welcome <strong>{{ auth.user.username }}</strong>!
           <td>{{ x.judul }}</td>
           <td>Rp. {{ x.jumlah_bantuan }}</td>
           <td>Rp. {{ x.jumlah_bantuan }}</td>
-          <td><a href="detail/{{x.id}}">Details</a></td>
+          <td><a href="/data/{{x.id}}" class="button is-small">Details</a></td>
         @endeach
     </tr>
   </tbody>

@@ -3,8 +3,11 @@
 const Route = use('Route')
 
 Route.get('/', 'BantuanController.home').as('home').middleware(['auth'])
-Route.get('detail/:id', 'BantuanController.detail').as('detail').middleware(['auth'])
 Route.get('/data', 'BantuanController.index').as('index')
+//Route.get('data/:id', 'BantuanController.detail').as('detail')
+Route.get('/data/:id', function({ params }){
+  return `This is the id ${params.id}`;
+})
 
 Route.get('register', 'Auth/RegisterController.showRegisterForm').middleware([
   'authenticated'

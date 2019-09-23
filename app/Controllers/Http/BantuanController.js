@@ -1,7 +1,6 @@
 'use strict'
 
 const Bantuan = use('App/Models/Bantuan')
-//const Database = use('Database')
 
 class BantuanController {
 
