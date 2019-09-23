@@ -4,7 +4,7 @@
 Hello, Welcome <strong>{{ auth.user.username }}</strong>!
 <br />
 
-<h1>{{ title }}</h1>
+<strong>{{ title }}</strong>
 
 <div class="table__wrapper">
 <table class="table is-bordered pricing__table is-fullwidth is-hoverable">
@@ -21,21 +21,16 @@ Hello, Welcome <strong>{{ auth.user.username }}</strong>!
   <tbody>
     <tr>
         @each(x in data)
-        <td>{{ x.username }}</td>
-        <td>{{ x.tanggal }}</td>
-        <td>{{ x.judul }}</td>
-        <td>{{ x.jumlah_bantuan }}</td>
-        <td>{{ x.detail }}</td>
-        <td><a href="/login">Details</a></td>
+          <td>{{ x.name }}</td>
+          <td>{{ x.tanggal }}</td>
+          <td>{{ x.judul }}</td>
+          <td>Rp. {{ x.jumlah_bantuan }}</td>
+          <td>{{ x.detail }}</td>
+          <td><a href="/login">Details</a></td>
         @endeach
     </tr>
   </tbody>
 </table>
 </div>
-
-
-@each(ua in userasker)
-{{ ua.username }}
-@endeach
 
 @endsection
