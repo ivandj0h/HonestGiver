@@ -1,0 +1,18 @@
+<main class="index">
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">HonestGiver</h1>
+            <h5 class="mb-5">
+                <em>Platform created to bridge between those who need financial assistance</em>
+            </h5>
+            {{#if user}}
+
+            {{else}}
+            <a class="btn btn-primary btn-lg" href="/signin">
+                Let's get started
+            </a>            
+            {{/if}}
+        </div>
+        <div class="overlay"></div>
+    </header>
+</main>
