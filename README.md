@@ -19,7 +19,7 @@ in order to run this application the 1st step you have to Install dependencies d
 npm install
 ```
 
-## Database setup
+## Database setup with Migration
 to connect to the database (now i use RDBMS MySQL), the 1st step is 
 
 ```bash
@@ -33,6 +33,12 @@ then Run the following command to run startup migrations
 ```bash
 adonis migration:run
 ```
+
+## Database setup without Migration
+if you don't want to use migration, then you can copy or import the honestgiver.sql using phpmyadmin
+or sqlyog or another tools.
+
+
 ## Run Server (nodemon suggested)
 before you run this apps, please make sure you already have nodemon installed on your machine.
 but if you don't have nodemon installed on your machine, please install it
@@ -51,3 +57,4 @@ nodemon server.js
 1. After migration the databases successed, you have to register yourself as a User before login.
 2. if you can not login, you can open your database, find user table and change is_active from 0 to 1
 3. to display the all data tables on dashboard, you can manually insert data into bantuan_givers table, bantuan table and user_askers table
+4. if still face any error like the data not show up, please use import Database setup without Migration
