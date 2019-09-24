@@ -1,20 +1,63 @@
-<div class="col-md-4 mx-auto">
-
-    <div class="card">
-        <div class="card-body">
+<div class="container p-4">
+    <div class="row">
+        <h5>Detail Bantuan</h5>
+        <br />
+        <div class="col-md-12">
+            <strong>INFO</strong>
             <form action="/links/edit/{{link.id}}" method="POST">
-                <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="Title" value="{{link.title}}" autofocus>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Nama Asker</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" value="{{link.name}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Tanggal Permintaan</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" value="{{link.tanggal}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Judul Bantuan</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" value="{{link.judul}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Detail bantuan</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control-plaintext" rows="3" readonly>{{link.detail}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Bantuan yang dibutuhkan</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" value="Rp. {{link.jumlah_bantuan}}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Bantuan terpenuhi</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" value="Rp. {{link.nilai_bantuan}}">
+                    </div>
+                </div>
+                <strong>INFO</strong>
+                <br />
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Saldo saya saat ini</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" value="Rp. {{link.nilai_bantuan}}">
+                    </div>
+                </div>                                                          
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" required>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="url" name="url" class="form-control" placeholder="URL" value="{{link.url}}">
-                </div>
-                <div class="form-group">
-                    <textarea name="description" rows="2" class="form-control" placeholder="Description">{{link.description}}</textarea>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-success btn-block">
-                        Save
+                    <button class="btn btn-success">
+                        Berikan Bantuan
                     </button>
                 </div>
             </form>
