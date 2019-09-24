@@ -53,5 +53,3 @@ nodemon server.js
 ![Formregister](docs/form_register.png "This is the login register")
 
 ![Form login](docs/form_login.png "This is the login login")
-
-![Bantuan](docs/bantuan.png "This is the Bantuan")
