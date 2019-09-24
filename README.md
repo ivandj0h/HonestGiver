@@ -48,8 +48,8 @@ npm start
 2. if you import honestgiver.sql to the database, use email : admin@admin.com, password admin to login
 
 ## ScreenShoot
-![Dashboard](docs/index.png "This is the dashboard")
+![Dashboard](captured/index.png "This is the dashboard")
 
-![Formregister](docs/form_register.png "This is the login register")
+![Formregister](captured/form_register.png "This is the login register")
 
-![Form login](docs/form_login.png "This is the login login")
+![Form login](captured/form_login.png "This is the login login")
