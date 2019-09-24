@@ -40,7 +40,7 @@ npm install -g nodemon
 and after that, to run this application just run :
 
 ```bash
-nodemon server.js
+npm start
 ```
 
 ## Important, before & after login
