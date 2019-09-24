@@ -1,13 +1,13 @@
 {
-  "name": "nodejs-mysql-notes",
+  "name": "honestgiver",
   "version": "1.0.0",
-  "description": "",
+  "description": "Platform created to bridge between those who need financial assistance",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ivandi",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
