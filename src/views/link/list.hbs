@@ -1,0 +1,29 @@
+<div class="container p-4">
+    <div class="row">
+        <h5>Bantuan Dibutuhkan</h5>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Tanggal Permintaan</th>
+                    <th scope="col">Judul Bantuan</th>
+                    <th scope="col">Jumlah Bantuan (Rp)</th>
+                    <th scope="col">Tanggal Terpenuhi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {{#each link}}
+                    <td>{{ name }}</td>
+                    <td>{{ tanggal }}</td>
+                    <td>{{ judul }}</td>
+                    <td>{{ nilai_bantuan }}</td>
+                    <td>{{ tanggal_dibantu }}</td>
+                    {{else}}
+                    <td colspan="5">Tidak ada data</td>
+                    {{/each}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
